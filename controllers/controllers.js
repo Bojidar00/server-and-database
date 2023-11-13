@@ -3,7 +3,7 @@ import { convertToEUR } from "../utils/currencyConversion.js";
 
 const updateAccountBalance = async (client, accountId, amount, currency) => {
   let eurAmount = await convertToEUR(amount, currency);
-  
+
   await client.query(
     `INSERT INTO accounts 
     (accountId, balance)
